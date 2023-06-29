@@ -1,0 +1,11 @@
+开启kerberos
+kadmin.local
+
+add_principal -randkey kafka-server/localhost@poc-study
+add_principal -randkey kafka-client@poc-study
+
+xst -k kafka-server.keytab kafka-server/localhost@poc-study
+xst -k kafka-client.keytab kafka-client@poc-study
+
+ubuntu时间同步
+ntpdate cn.pool.ntp.org
